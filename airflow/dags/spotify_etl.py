@@ -28,15 +28,15 @@ def check_if_valid_data(df: pd.DataFrame) -> bool:
         raise Exception("Null values found")
 
     # Check that all timestamps are of yesterday's date
-    # yesterday = datetime.datetime.now() - datetime.timedelta(days=1)
-    # yesterday = yesterday.replace(hour=0, minute=0, second=0, microsecond=0)
+    yesterday = datetime.datetime.now() - datetime.timedelta(days=1)
+    yesterday = yesterday.replace(hour=0, minute=0, second=0, microsecond=0)
 
-    # timestamps = df["timestamp"].tolist()
-    # for timestamp in timestamps:
-    #     if datetime.datetime.strptime(timestamp, '%Y-%m-%d') != yesterday:
-    #         raise Exception("At least one of the returned songs does not have a yesterday's timestamp")
+    timestamps = df["timestamp"].tolist()
+    for timestamp in timestamps:
+        if datetime.datetime.strptime(timestamp, '%Y-%m-%d') != yesterday:
+            raise Exception("At least one of the returned songs does not have a yesterday's timestamp")
 
-    # return True
+    return True
 
 
 def run_spotify_etl():
