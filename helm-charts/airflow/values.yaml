@@ -2265,6 +2265,8 @@ config:
     statsd_host: '{{ printf "%s-statsd" .Release.Name }}'
   webserver:
     enable_proxy_fix: 'True'
+    expose_config: 'True'
+    
     # For Airflow 1.10
     rbac: 'True'
   celery:
