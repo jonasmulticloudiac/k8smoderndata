@@ -1,5 +1,5 @@
 from datetime import timedelta
-import datetime
+from datetime import datetime
 from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
 from airflow.utils.dates import days_ago
@@ -9,7 +9,7 @@ from airflow.utils.dates import days_ago
 default_args = {
     'owner': 'airflow',
     'depends_on_past': False,
-    'start_date': datetime(2023, 10, 8),
+    'start_date': datetime(2023,10,8),
     'email': ['jonas.isaias@gmail.com'],
     'email_on_failure': False,
     'email_on_retry': False,
