@@ -18,7 +18,7 @@ with DAG(dag_id='trigger_airbyte_dbt_job',
 
     airbyte_economy_sync = AirbyteTriggerSyncOperator(
         task_id='airbyte_economy',
-        airbyte_conn_id='airbyte_example',
+        airbyte_conn_id='airflow-call-to-airbyte-example',
         connection_id=airbyte_economy_connection_id,
         asynchronous=False,
         timeout=3600,
@@ -36,7 +36,7 @@ with DAG(dag_id='trigger_airbyte_dbt_job',
 
     airbyte_epidemiology_sync = AirbyteTriggerSyncOperator(
         task_id='airbyte_epidemiology',
-        airbyte_conn_id='airbyte_example',
+        airbyte_conn_id='airflow-call-to-airbyte-example',
         connection_id=airbyte_epidemiology_connection_id,
         asynchronous=False,
         timeout=3600,
@@ -45,7 +45,7 @@ with DAG(dag_id='trigger_airbyte_dbt_job',
 
     airbyte_index_sync = AirbyteTriggerSyncOperator(
         task_id='airbyte_index',
-        airbyte_conn_id='airbyte_example',
+        airbyte_conn_id='airflow-call-to-airbyte-example',
         connection_id=airbyte_index_connection_id,
         asynchronous=False,
         timeout=3600,
