@@ -27,7 +27,7 @@ with DAG(dag_id='trigger_airbyte_dbt_job',
 
     airbyte_demographics_sync = AirbyteTriggerSyncOperator(
         task_id='airbyte_demographics',
-        airbyte_conn_id='airbyte_example',
+        airbyte_conn_id='airflow-call-to-airbyte-example',
         connection_id=airbyte_demographics_connection_id,
         asynchronous=False,
         timeout=3600,
