@@ -6,9 +6,9 @@ import json
 
 
 airbyte_demographics_connection_id = Variable.get("AIRBYTE_DEMOGRAPHICS_CONNECTION_ID")
-# airbyte_index_connection_id = Variable.get("AIRBYTE_INDEX_CONNECTION_ID")
-# airbyte_epidemiology_connection_id = Variable.get("AIRBYTE_EPIDEMIOLOGY_CONNECTION_ID")
-# airbyte_economy_connection_id = Variable.get("AIRBYTE_ECONOMY_CONNECTION_ID")
+airbyte_index_connection_id = Variable.get("AIRBYTE_INDEX_CONNECTION_ID")
+airbyte_epidemiology_connection_id = Variable.get("AIRBYTE_EPIDEMIOLOGY_CONNECTION_ID")
+airbyte_economy_connection_id = Variable.get("AIRBYTE_ECONOMY_CONNECTION_ID")
 
 with DAG(dag_id='trigger_airbyte_dbt_job',
          default_args={'owner': 'airflow'},
