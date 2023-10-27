@@ -16,14 +16,14 @@ with DAG(dag_id='trigger_airbyte_dbt_job',
          start_date=days_ago(1)
          ) as dag:
 
-    airbyte_economy_sync = AirbyteTriggerSyncOperator(
-        task_id='airbyte_economy',
-        airbyte_conn_id='airbyte_example',
-        connection_id=airbyte_economy_connection_id,
-        asynchronous=False,
-        timeout=3600,
-        wait_seconds=3
-    )
+    # airbyte_economy_sync = AirbyteTriggerSyncOperator(
+    #     task_id='airbyte_economy',
+    #     airbyte_conn_id='airbyte_example',
+    #     connection_id=airbyte_economy_connection_id,
+    #     asynchronous=False,
+    #     timeout=3600,
+    #     wait_seconds=3
+    # )
 
     airbyte_demographics_sync = AirbyteTriggerSyncOperator(
         task_id='airbyte_demographics',
@@ -43,14 +43,14 @@ with DAG(dag_id='trigger_airbyte_dbt_job',
     #     wait_seconds=3
     # )
 
-    airbyte_index_sync = AirbyteTriggerSyncOperator(
-        task_id='airbyte_index',
-        airbyte_conn_id='airbyte_example',
-        connection_id=airbyte_index_connection_id,
-        asynchronous=False,
-        timeout=3600,
-        wait_seconds=3
-    )
+    # airbyte_index_sync = AirbyteTriggerSyncOperator(
+    #     task_id='airbyte_index',
+    #     airbyte_conn_id='airbyte_example',
+    #     connection_id=airbyte_index_connection_id,
+    #     asynchronous=False,
+    #     timeout=3600,
+    #     wait_seconds=3
+    # )
 
     #airbyte_economy_sync >> airbyte_demographics_sync >> airbyte_index_sync 
 
