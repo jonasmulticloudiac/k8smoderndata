@@ -65,10 +65,10 @@ containerLifecycleHooks: {}
 airflowHome: /opt/airflow
 
 # Default airflow repository -- overridden by all the specific images below
-defaultAirflowRepository: apache/airflow
+defaultAirflowRepository: projonas/airflow-custom
 
 # Default airflow tag to deploy
-defaultAirflowTag: "2.7.1"
+defaultAirflowTag: "1.0.0"
 
 # Default airflow digest. If specified, it takes precedence over tag
 defaultAirflowDigest: ~
@@ -446,7 +446,7 @@ webserverSecretKeySecretName: ~
 #  If you have such keytab file you can do it with similar
 #
 #  kubectl create secret generic {{ .Release.name }}-kerberos-keytab --from-file=kerberos.keytab
-#
+#AIRFLOW__CORE_
 #
 #  Alternatively, instead of manually creating the secret, it is possible to specify
 #  kerberos.keytabBase64Content parameter. This parameter should contain base64 encoded keytab.
@@ -2266,6 +2266,7 @@ config:
   webserver:
     enable_proxy_fix: 'True'
     expose_config: 'True'
+  
     
     # For Airflow 1.10
     rbac: 'True'
@@ -2288,6 +2289,7 @@ config:
     max_retries: 3
     timeout: 30
     retry_timeout: 'True'
+
   kerberos:
     keytab: '{{ .Values.kerberos.keytabPath }}'
     reinit_frequency: '{{ .Values.kerberos.reinitFrequency }}'

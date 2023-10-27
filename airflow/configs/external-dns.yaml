@@ -1,0 +1,10 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: airbyte-ns
+  namespace: airflow
+spec:
+  type: ExternalName
+  externalName:  airbyte-airbyte-webapp-svc.airbyte.svc.cluster.local
+  ports:
+  - port: 80
